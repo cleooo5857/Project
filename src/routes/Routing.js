@@ -9,6 +9,10 @@ const Routing = () => {
          
         <Route element={<Layout/>}>
          <Route path={'/'} element={<Test/>} />
+         <Route path={'/test1'} element={<Test/>} />
+         <Route path={'/test2'} element={<Test/>} />
+         <Route path={'/test3'} element={<Test/>} />
+         <Route path={'/test4'} element={<Test/>} />
         </Route>
       </Routes>
     </BrowserRouter>

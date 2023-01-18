@@ -1,15 +1,36 @@
 import { flexAlignCenter, flexCenter } from "libs/styles/common"
 import styled from "styled-components"
+import { AiOutlineLeft ,AiOutlineRight} from 'react-icons/ai';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Header() {
+   const history = useNavigate();
+   
+   
+   const onPageBack = () => {
+      history(-1)
+   }
+   
+   const onPageFront = () => {
+      history(+1)
+   }
+
    return (
       <S.Wrapper>
-         <div>일정관리/상세페이지</div>
+         <S.LeftItem>
+            <button onClick={onPageBack}>
+               <AiOutlineLeft/>
+            </button>
+            <button onClick={onPageFront}>
+               <AiOutlineRight/>
+            </button>
+            <div><p>일정관리/상세페이지</p></div>
+         </S.LeftItem>
 
-         <div>
-            <div>프로필</div>
+         {/* <div>
             <div>로그아웃 </div>
-         </div>
+         </div> */}
       </S.Wrapper>
    )
 }
@@ -20,12 +41,25 @@ const Wrapper = styled.div`
    ${flexAlignCenter}
    max-width: 100vw;
    background: white;
-   user-select: none;
+   position: relative;
    padding: 0 12px;
    height: 58px;
+   box-shadow: 5px 3px 10px rgb(0 0 0 / 5%);
+`
+const LeftItem = styled.div`
+
+   ${flexAlignCenter}
+
+   & button{
+      background: none;
+      font-size: ${({ theme }) => theme.fontSize.xLarge};
+      color: ${({ theme }) => theme.palette.subColor};
+      line-height: 15px;
+   }
 
 `
 
 const S = { 
    Wrapper,
+   LeftItem,
 }

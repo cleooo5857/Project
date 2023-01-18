@@ -23,7 +23,7 @@ const li = styled.li`
    ${flexAlignCenter}
 
    &:hover {
-      background-color: rgb(255,255,255 , .2);
+      background-color: rgb(215,138,74);
       border-radius: 5px;
    }
    &:hover a {
@@ -33,7 +33,7 @@ const li = styled.li`
 
    & a {
       width: 100%;
-      color: ${({theme}) => theme.palette.sidebar};
+      color: ${({theme}) => theme.palette.fontColor};
       font-size: ${({theme}) => theme.fontSize.xLarge};
       padding-left: 5px;
       

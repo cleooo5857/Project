@@ -33,7 +33,7 @@ export default Sidebar
 const Wrapper = styled.div`
    max-width: 500px;
    width : 300px;
-   background: #2f2f2f;
+   background: rgb(243,244,246);
    height: 100vh;
    position: relative;
 `

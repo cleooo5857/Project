@@ -6,12 +6,12 @@ const palette = {
         200: '#00E5C9',
         300: '#00C7AE',
     },
-
-    sidebar :'#aaacad',
     error: '#FF0000',
     white: '#ffffff',
     black: '#000000',
-    fontColor: '#ffffff',
+    fontColor: '#3f434a',
+    subColor: '#6a707c',
+    sidebar :'#aaacad',
     gray: {
         100: '#f5f5f5',
         200: '#e0e0e0',

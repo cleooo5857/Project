@@ -1,11 +1,18 @@
+import styled from "styled-components"
+
 function Test (){
 
 
    return (
-      <div>
+      <Wrapper>
          sad
-      </div>
+      </Wrapper>
    )
 }
 
 export default Test
+
+const Wrapper = styled.div`
+   height: 100vh;
+   background-color: #fff;
+`
