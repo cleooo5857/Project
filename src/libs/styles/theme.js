@@ -1,3 +1,4 @@
+
 // 색상
 const palette = {
     primary: {
@@ -5,9 +6,8 @@ const palette = {
         200: '#00E5C9',
         300: '#00C7AE',
     },
-    subColor: {
-        100: '#EBF1F4',
-    },
+
+    sidebar :'#aaacad',
     error: '#FF0000',
     white: '#ffffff',
     black: '#000000',
@@ -24,7 +24,7 @@ const fontSize = {
     small: '14px',
     medium: '16px',
     large: '18px',
-    xLarge: '24px',
+    xLarge: '20px',
     xxLarge: '32px',
 };
 
@@ -35,6 +35,8 @@ const fontWeight = {
     medium: '500',
     bold: '800',
 };
+
+
 
 // 행간
 const lineHeight = {
