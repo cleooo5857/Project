@@ -7,10 +7,10 @@ import { FcAlarmClock,FcAddressBook,FcBarChart,FcBusinessman,FcDataConfiguration
 function Sidebar(){
    const menus = [
       { name: "Manage schedules", path: "/" ,      icon: <FcAlarmClock/>},
-      { name: "annual target", path: "/test1" , icon: <FcAddressBook/>},
-      { name: "Yearly Goals", path: "/test2" ,      icon: <FcBarChart/>},
-      { name: "Blog", path: "/test3" , icon: <FcBusinessman/>},
-      { name: "Resume", path: "/test4" , icon: <FcDataConfiguration/>},
+      { name: "Yearly Goals", path: "/Yearly-Goals" , icon: <FcAddressBook/>},
+      { name: "Memo", path: "/Memo" ,      icon: <FcBarChart/>},
+      { name: "Blog", path: "/Blog" , icon: <FcBusinessman/>},
+      { name: "Resume", path: "/Resume" , icon: <FcDataConfiguration/>},
    ];
 
 
@@ -43,7 +43,6 @@ const Nav = styled.nav `
    padding: 70px 12px;
    
 `
-
 
 const S = {
    Wrapper,

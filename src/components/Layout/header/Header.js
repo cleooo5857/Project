@@ -1,12 +1,18 @@
 import { flexAlignCenter, flexCenter } from "libs/styles/common"
 import styled from "styled-components"
 import { AiOutlineLeft ,AiOutlineRight} from 'react-icons/ai';
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Header() {
    const history = useNavigate();
-   
+   const location = useLocation();
+   const decoding = decodeURI(location.pathname.slice(1))
+   const replace = decoding.replace(/-/gi,' ')
+
+   useEffect(() => {
+      
+   },[location])
    
    const onPageBack = () => {
       history(-1)
@@ -25,7 +31,7 @@ function Header() {
             <button onClick={onPageFront}>
                <AiOutlineRight/>
             </button>
-            <div><p>일정관리/상세페이지</p></div>
+            <div><p>{replace === '' ? 'Manage-schedules' : replace }</p></div>
          </S.LeftItem>
 
          {/* <div>

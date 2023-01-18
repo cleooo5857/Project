@@ -6,13 +6,12 @@ const Routing = () => {
   return (
     <BrowserRouter>
       <Routes>
-         
         <Route element={<Layout/>}>
          <Route path={'/'} element={<Test/>} />
-         <Route path={'/test1'} element={<Test/>} />
-         <Route path={'/test2'} element={<Test/>} />
-         <Route path={'/test3'} element={<Test/>} />
-         <Route path={'/test4'} element={<Test/>} />
+         <Route path={'/Yearly-Goals'} element={<Test/>} />
+         <Route path={'/Memo'} element={<Test/>} />
+         <Route path={'/Blog'} element={<Test/>} />
+         <Route path={'/Resume'} element={<Test/>} />
         </Route>
       </Routes>
     </BrowserRouter>
