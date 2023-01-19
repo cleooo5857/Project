@@ -23,7 +23,7 @@ const li = styled.li`
    ${flexAlignCenter}
 
    &:hover {
-      background-color: rgb(215,138,74);
+      background-color: rgb(252,182,123);
       border-radius: 5px;
    }
    &:hover a {
@@ -41,6 +41,8 @@ const li = styled.li`
 `
 const Item = styled.div`
    padding-left: 8px;
+   display: flex;
+   width: 100%;
 ` 
 
 const S ={ 

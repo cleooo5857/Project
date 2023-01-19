@@ -15,3 +15,15 @@ export const fadein = keyframes`
         transform: translateY(-30px);
     }
 `;
+
+export const onToggle = keyframes`
+    from {
+        transform: translateY(-100%);
+    }
+    
+`
+export const offToggle = keyframes`
+    to {
+        transform: translateY(0%);
+    }
+`

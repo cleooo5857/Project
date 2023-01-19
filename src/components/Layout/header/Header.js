@@ -1,19 +1,28 @@
 import { flexAlignCenter, flexCenter } from "libs/styles/common"
 import styled from "styled-components"
 import { AiOutlineLeft ,AiOutlineRight} from 'react-icons/ai';
+import { BsLayoutSidebarInset } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { toggle } from "libs/styles/keyframe";
+import { sidebarToggleAtom } from "atoms/sidebarToggle/Toggle";
+import { useRecoilState } from "recoil";
+
 
 function Header() {
    const history = useNavigate();
    const location = useLocation();
    const decoding = decodeURI(location.pathname.slice(1))
    const replace = decoding.replace(/-/gi,' ')
+   const [toggle,settoggle] = useRecoilState(sidebarToggleAtom);
 
-   useEffect(() => {
-      
-   },[location])
+
+   const ontoggle = () => {
+      if(!toggle) return settoggle(true);
+      settoggle(false);
+   }
    
+
    const onPageBack = () => {
       history(-1)
    }
@@ -24,6 +33,7 @@ function Header() {
 
    return (
       <S.Wrapper>
+         <BsLayoutSidebarInset onClick={ontoggle}></BsLayoutSidebarInset>
          <S.LeftItem>
             <button onClick={onPageBack}>
                <AiOutlineLeft/>
@@ -33,10 +43,6 @@ function Header() {
             </button>
             <div><p>{replace === '' ? 'Manage-schedules' : replace }</p></div>
          </S.LeftItem>
-
-         {/* <div>
-            <div>로그아웃 </div>
-         </div> */}
       </S.Wrapper>
    )
 }
@@ -51,6 +57,13 @@ const Wrapper = styled.div`
    padding: 0 12px;
    height: 58px;
    box-shadow: 5px 3px 10px rgb(0 0 0 / 5%);
+
+   & svg{
+      margin-right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+   }
+   
 `
 const LeftItem = styled.div`
 
@@ -62,9 +75,12 @@ const LeftItem = styled.div`
       color: ${({ theme }) => theme.palette.subColor};
       line-height: 15px;
    }
-
 `
-
+const test = styled.button`
+   ${({toggle}) => 
+      !toggle ? {toggle} : null
+   }
+`
 const S = { 
    Wrapper,
    LeftItem,
