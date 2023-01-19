@@ -33,7 +33,9 @@ function Header() {
 
    return (
       <S.Wrapper>
-         <BsLayoutSidebarInset onClick={ontoggle}></BsLayoutSidebarInset>
+         <S.ToggleBtn>
+            <BsLayoutSidebarInset onClick={ontoggle}></BsLayoutSidebarInset>
+         </S.ToggleBtn>
          <S.LeftItem>
             <button onClick={onPageBack}>
                <AiOutlineLeft/>
@@ -59,12 +61,16 @@ const Wrapper = styled.div`
    box-shadow: 5px 3px 10px rgb(0 0 0 / 5%);
 
    & svg{
-      margin-right: 10px;
-      font-size: 20px;
-      cursor: pointer;
+      
    }
-   
 `
+const ToggleBtn = styled.button`
+   margin: 5px 5px 0 10px;
+   font-size: 20px;
+   cursor: pointer;
+   background: none;
+`  
+
 const LeftItem = styled.div`
 
    ${flexAlignCenter}
@@ -74,10 +80,12 @@ const LeftItem = styled.div`
       font-size: ${({ theme }) => theme.fontSize.xLarge};
       color: ${({ theme }) => theme.palette.subColor};
       line-height: 15px;
+      cursor: pointer;
    }
 `
 
 const S = { 
    Wrapper,
    LeftItem,
+   ToggleBtn,
 }
