@@ -46,7 +46,7 @@ const Wrapper = styled.div`
    position: relative;
    padding: 25px 10px;
    transition: all 0.2s ease;
-   display: ${({toggle}) => (toggle ? `block` : 'none')};
+   display: ${({toggle}) => (toggle ? `none` : 'block')};
 `
 
 
