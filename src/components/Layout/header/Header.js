@@ -76,11 +76,7 @@ const LeftItem = styled.div`
       line-height: 15px;
    }
 `
-const test = styled.button`
-   ${({toggle}) => 
-      !toggle ? {toggle} : null
-   }
-`
+
 const S = { 
    Wrapper,
    LeftItem,
