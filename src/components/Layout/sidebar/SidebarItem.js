@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import common, { flexAlignCenter } from "libs/styles/common"
+import { flexAlignCenter } from "libs/styles/common"
 
 function SidebarItme({menu}) {
    
+
+   // const onSelectNav = (e) => {
+   //    console.log(e.target.value);
+   // }
 
    return (
       <S.li>
          <S.Item>
             {menu.icon}
-            <Link to={menu.path}>{menu.name}</Link>
+            <Link to={menu.path} >{menu.name}</Link>
          </S.Item>
       </S.li>
    )

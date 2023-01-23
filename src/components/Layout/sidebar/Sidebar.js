@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 import SidebarItme from "./SidebarItem";
-import { FcAlarmClock,FcAddressBook,FcBarChart,FcBusinessman,FcDataConfiguration} from 'react-icons/fc';
+import { FcAddressBook,FcBusinessman,FcDataConfiguration} from 'react-icons/fc';
+import { CiMemoPad } from "react-icons/ci";
+import { GrSchedules } from "react-icons/gr";
 import Profile from "../header/Profile";
 import { sidebarToggleAtom } from "atoms/sidebarToggle/Toggle";
 import { onToggle,offToggle } from "libs/styles/keyframe";
@@ -12,9 +14,9 @@ function Sidebar(){
    const [toggle,settoggle] = useRecoilState(sidebarToggleAtom);
 
    const menus = [
-      { name: "Manage schedules", path: "/" ,      icon: <FcAlarmClock/>},
+      { name: "Manage schedules", path: "/" ,icon: <GrSchedules/>},
       { name: "Yearly Goals", path: "/Yearly-Goals" , icon: <FcAddressBook/>},
-      { name: "Memo", path: "/Memo" ,      icon: <FcBarChart/>},
+      { name: "Memo", path: "/Memo" , icon: <GrSchedules/>},
       { name: "Blog", path: "/Blog" , icon: <FcBusinessman/>},
       { name: "Resume", path: "/Resume" , icon: <FcDataConfiguration/>},
    ];
