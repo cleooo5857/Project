@@ -41,14 +41,16 @@ export default Sidebar
 
 
 const Wrapper = styled.div`
-   max-width: 500px;
+   position: sticky;
+   top: 0px;
+   left: 0px;
    width : 300px;
    background: rgb(243,244,246);
    height: 100vh;
-   position: relative;
    padding: 25px 10px;
    transition: all 0.2s ease;
    display: ${({toggle}) => (toggle ? `none` : 'block')};
+
 `
 
 

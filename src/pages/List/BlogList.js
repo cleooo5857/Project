@@ -66,7 +66,7 @@ export default BlogList
 
 
 const Wrapper = styled.div`
-  
+   background-color: #fff;
 `;
 
 const Container = styled.div`
