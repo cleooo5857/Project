@@ -1,28 +1,27 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Moment from 'react-moment';
 
 function BlogCard({data}) {
    
-   useEffect(()=>{
-      console.log(data);
-   },[])
-   console.log(data);
-
    return(
       <S.Wrapper>
          <Link>
             <S.ImgContainer>
                <img src={data.img}/>
             </S.ImgContainer>
-            <S.titleContainer>
+            <S.BodyContainer>
                <strong>
                   {data.title}
                </strong>
                <span>
                   {data.content}
                </span>
-            </S.titleContainer>
+            <S.Timetitle >
+               저장 한 날짜 표시
+            </S.Timetitle>
+            </S.BodyContainer>
          </Link>
       </S.Wrapper>
    )
@@ -42,6 +41,11 @@ const Wrapper = styled.div`
    display: flex;
    border: 2px solid #212529;
    flex-direction: column;
+  
+
+   &:hover{
+      transform: translateY(-10px);
+   }
 `
 
 const ImgContainer = styled.div`
@@ -60,7 +64,7 @@ const ImgContainer = styled.div`
    }
 `
 
-const titleContainer = styled.div`
+const BodyContainer = styled.div`
    padding: 1rem;
    display: flex;
    flex: 1 1 0%;
@@ -75,6 +79,7 @@ const titleContainer = styled.div`
       white-space: nowrap;
       overflow: hidden;
       color: #212529;
+      font-weight: ${({theme}) => theme.fontWeight.bold};
    }
 
    & span {
@@ -92,9 +97,15 @@ const titleContainer = styled.div`
       color: #495057;
    }
 `
+const Timetitle = styled.div`
+   font-size: 0.75rem;
+   line-height: 1.5;
+   color: rgb(134,142,150)
+`
 
 const S = {
    Wrapper,
    ImgContainer,
-   titleContainer,
+   BodyContainer,
+   Timetitle,
 }

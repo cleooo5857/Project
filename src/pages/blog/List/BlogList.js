@@ -74,6 +74,8 @@ const Container = styled.div`
    flex-wrap: wrap;
    justify-content: center;
    padding: 30px 0;
+   max-width: 1200px;
+   margin: 0 auto;
 `;
 
 const S = {
