@@ -1,13 +1,14 @@
 import { useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Moment from 'react-moment';
 
 function BlogCard({data}) {
-   
+
+
    return(
       <S.Wrapper>
-         <Link>
+         <Link to={`${data.title}`} state={{data}}>
             <S.ImgContainer>
                <img src={data.img}/>
             </S.ImgContainer>
@@ -100,7 +101,7 @@ const BodyContainer = styled.div`
 const Timetitle = styled.div`
    font-size: 0.75rem;
    line-height: 1.5;
-   color: rgb(134,142,150)
+   color: rgb(134,142,150);
 `
 
 const S = {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import BlogCard from 'components/Layout/Card/BlogCard';
+import BlogCard from 'components/blogComponent/Card/BlogCard';
+import BlogHeaderComponent from 'components/blogComponent/Header';
 
 
 
@@ -49,13 +50,15 @@ function BlogList(){
    
    return (
       <S.Wrapper>
-         <S.Container>
-         {
-            testData.map((data) => (
-               <BlogCard data={data} />
-         ))}
-
-         </S.Container>
+         <S.Innerwrap>
+            <BlogHeaderComponent/>
+            <S.Container>
+            {
+               testData.map((data) => (
+                  <BlogCard data={data} />
+            ))}
+            </S.Container>
+         </S.Innerwrap>
       </S.Wrapper>
      
    )
@@ -67,18 +70,25 @@ export default BlogList
 
 const Wrapper = styled.div`
    background-color: #fff;
+   
 `;
+
+const Innerwrap = styled.div`
+   margin-left: auto;
+   margin-right: auto;
+   width: 1200px;
+`
 
 const Container = styled.div`
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    padding: 30px 0;
-   max-width: 1200px;
-   margin: 0 auto;
+   
 `;
 
 const S = {
-    Wrapper,
-    Container,
+   Wrapper,
+   Innerwrap,
+   Container,
 };
