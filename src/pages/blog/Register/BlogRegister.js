@@ -4,15 +4,16 @@ import 'react-quill/dist/quill.snow.css';
 import styled from "styled-components"
 
 function BlogRegister() {
-   const toolbarOptions = [
-      ["link", "image", "video"],
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"],
-      ["blockquote"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      [{ color: [] }, { background: [] }],
-      [{ align: [] }],
-    ];
+   // const toolbarOptions = [
+   //    ["link", "image", "video"],
+   //    [{ header: [1, 2, 3, false] }],
+   //    ["bold", "italic", "underline", "strike"],
+   //    ["blockquote"],
+   //    [{ list: "ordered" }, { list: "bullet" }],
+   //    [{ color: [] }, { background: [] }],
+   //    [{ align: [] }],
+   //  ];
+
    const [value, setValue] = useState('');
 
    useEffect((e) => {
