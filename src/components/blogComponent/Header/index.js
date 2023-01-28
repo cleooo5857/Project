@@ -1,9 +1,11 @@
 import styled from "styled-components"
+import { useNavigate } from 'react-router-dom';
 
 function BlogHeaderComponent() {
 
    const tablist = [{name: "전체"},{name: "오늘"},{name: "이번주"},{name: "이번 달"},{name: "올 해"}]
-   
+   const navigate = useNavigate();
+
    return (
       <S.Wrapper>
          <S.HeaderContainer>
@@ -16,7 +18,9 @@ function BlogHeaderComponent() {
                   ))
                }
             </S.Ul>
-            <button>새 글 작성</button>
+            <button onClick={() => {
+               navigate(`/Blog/register`);
+            }}>새 글 작성</button>
          </S.HeaderContainer>
       </S.Wrapper>
    )
@@ -48,6 +52,7 @@ const HeaderContainer = styled.div`
    color: rgb(33,37,41);
    transition: all 0.125s ease-in 0s;
    cursor: pointer;
+   margin-right: 2rem;
 
    &:hover{
       color: rgb(252,182,123);

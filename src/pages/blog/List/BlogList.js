@@ -59,8 +59,7 @@ function BlogList(){
             ))}
             </S.Container>
          </S.Innerwrap>
-      </S.Wrapper>
-     
+      </S.Wrapper>     
    )
 }
 
@@ -70,7 +69,7 @@ export default BlogList
 
 const Wrapper = styled.div`
    background-color: #fff;
-   
+   min-height: 100%;
 `;
 
 const Innerwrap = styled.div`
@@ -82,7 +81,6 @@ const Innerwrap = styled.div`
 const Container = styled.div`
    display: flex;
    flex-wrap: wrap;
-   justify-content: center;
    padding: 30px 0;
    
 `;
@@ -92,3 +90,4 @@ const S = {
    Innerwrap,
    Container,
 };
+

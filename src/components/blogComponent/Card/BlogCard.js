@@ -32,7 +32,7 @@ export default BlogCard
 
 
 const Wrapper = styled.div`
-   width: 20rem;
+   width: 16.5rem;
    background: #fff;
    border-radius: 4px;
    box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
@@ -42,7 +42,6 @@ const Wrapper = styled.div`
    display: flex;
    border: 2px solid #212529;
    flex-direction: column;
-  
 
    &:hover{
       transform: translateY(-10px);

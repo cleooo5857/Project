@@ -57,7 +57,7 @@ const Wrapper = styled.div`
    background: white;
    position: relative;
    padding: 0 12px;
-   height: 58px;
+   min-height: 58px;
    box-shadow: 5px 3px 10px rgb(0 0 0 / 5%);
 
    & svg{
