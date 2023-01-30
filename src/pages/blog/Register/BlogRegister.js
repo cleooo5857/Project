@@ -9,7 +9,13 @@ function BlogRegister() {
 
    return (
       <S.Wrapper>
-        <Editor/>
+         <S.Container>
+            <S.Title>
+               <input placeholder='제목을 입력해주세요.'></input>
+            </S.Title>
+            <Editor/>
+            <button>제출</button>
+         </S.Container>
       </S.Wrapper>
    )
 }
@@ -17,12 +23,40 @@ function BlogRegister() {
 export default BlogRegister
 
 const Wrapper = styled.div`
-   min-height: 100%;
    background-color: #fff;
+   min-height: 100%;
+
+`
+const Container = styled.div`
+   min-height: 100%;
+
 `
 
 
-const S = {
-   Wrapper
+const Title = styled.div`
+   width: 100%;
+   padding : 2.5rem;
+   
+   & input {
+      width: 100%;
+      height: 56px;
+      min-height: 56px;
+      line-height: 44px;
+      box-shadow: none;
+      padding-left: 16px;
+      padding-right: 52px;
+      border: 1px solid #e1e3e8;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      border: 1px solid #e1e3e8;
+   }
 
+`
+
+const S = {
+   Wrapper,
+   Container,
+   Title
 }

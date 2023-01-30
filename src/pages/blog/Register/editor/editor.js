@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import styled from "styled-components";
 
 function Editor() {
   const [value, setValue] = useState("");
-  const modules = {
+
+// 새글 작성 시 
+// 게시물 id 저장
+// content 내용 저장
+/*
+   -------------
+   title 입력 , 입력 안할시 err 핸들
+   content 입력 입력 안할시 err 핸들
+*/
+   const modules = {
     toolbar: {
       container: [
         [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -24,19 +34,40 @@ function Editor() {
       ],
     },
   };
-  const formats = ["header","bold","italic","underline","strike","blockquote","list","indent","link",];
+  useEffect(() => {
+   console.log(value);
+  })
+//   const formats = ["header","bold","italic","underline","strike","blockquote","list","indent","link",];
   
   
   return (
-    <ReactQuill style={{  height: '100%' }}
-      theme="snow"
-      value={value}
-      placeholder="내용을 입력해주세요"
-      onChange={setValue}
-      modules={modules}
-      formats={formats}
-    />
+   <S.Wrapper>
+      <ReactQuill style={{  height: '100%' }}
+         theme="snow"
+         value={value}
+         placeholder="내용을 입력해주세요"
+         onChange={setValue}
+         modules={modules}
+         />
+   </S.Wrapper>
   );
 }
 
 export default Editor;
+
+
+const Wrapper = styled.div`
+   height: 100%;
+   padding : 0 2.5rem;
+   
+   & .ql-toolbar {
+
+   }
+   & .ql-container{
+      /* border: none; */
+   }
+`
+
+const S = {
+   Wrapper,
+}
