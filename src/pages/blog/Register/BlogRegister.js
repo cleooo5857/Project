@@ -14,7 +14,9 @@ function BlogRegister() {
                <input placeholder='제목을 입력해주세요.'></input>
             </S.Title>
             <Editor/>
-            <button>제출</button>
+            <S.Btnwrap>
+               <button>글 등록</button>
+            </S.Btnwrap>
          </S.Container>
       </S.Wrapper>
    )
@@ -25,17 +27,19 @@ export default BlogRegister
 const Wrapper = styled.div`
    background-color: #fff;
    min-height: 100%;
+   padding : 2.5rem;
+
 
 `
 const Container = styled.div`
    min-height: 100%;
-
+   
 `
 
 
 const Title = styled.div`
    width: 100%;
-   padding : 2.5rem;
+   padding : 0 0 2.5rem 0;
    
    & input {
       width: 100%;
@@ -55,8 +59,29 @@ const Title = styled.div`
 
 `
 
+const Btnwrap = styled.div`
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 1rem;
+
+   & button{
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      padding: 0 1.25rem;
+      height: 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      background-color: #262626;
+      color: #fff;
+   }
+`
+
 const S = {
    Wrapper,
    Container,
-   Title
+   Title,
+   Btnwrap
 }

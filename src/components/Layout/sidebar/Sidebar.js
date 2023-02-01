@@ -20,7 +20,7 @@ function Sidebar(){
       { name: "Blog", path: "/Blog" , icon: <FcBusinessman/>},
       { name: "Resume", path: "/Resume" , icon: <FcDataConfiguration/>},
    ];
-console.log(toggle);
+
    return(
       <S.Wrapper toggle={toggle}>
          <Profile/>

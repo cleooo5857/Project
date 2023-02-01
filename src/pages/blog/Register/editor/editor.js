@@ -58,13 +58,14 @@ export default Editor;
 
 const Wrapper = styled.div`
    height: 100%;
-   padding : 0 2.5rem;
    
    & .ql-toolbar {
-
    }
    & .ql-container{
-      /* border: none; */
+      
+   }
+   & .ql-editor{
+      min-height: 380px;
    }
 `
 
