@@ -1,10 +1,15 @@
+import { editorcontent } from "atoms/sidebarToggle/Toggle";
+import useInput from "hooks/useInput";
 import { useEffect, useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
 function Editor() {
-  const [value, setValue] = useState("");
+   const [editorValue, seteditorValue] = useInput("");
+
+
 
 // 새글 작성 시 
 // 게시물 id 저장
@@ -14,6 +19,9 @@ function Editor() {
    title 입력 , 입력 안할시 err 핸들
    content 입력 입력 안할시 err 핸들
 */
+   useEffect(() => {
+   },[])
+   
    const modules = {
     toolbar: {
       container: [
@@ -35,7 +43,6 @@ function Editor() {
     },
   };
   useEffect(() => {
-   console.log(value);
   })
 //   const formats = ["header","bold","italic","underline","strike","blockquote","list","indent","link",];
   
@@ -44,9 +51,9 @@ function Editor() {
    <S.Wrapper>
       <ReactQuill style={{  height: '100%' }}
          theme="snow"
-         value={value}
+         value={editorValue}
          placeholder="내용을 입력해주세요"
-         onChange={setValue}
+         onChange={seteditorValue}
          modules={modules}
          />
    </S.Wrapper>
